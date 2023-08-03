@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"title": "Event 1",
+		"description": "Description for Event 1",
+		"select": "Option 1",
+		"date": "2023-08-03T12:00:00.000Z",
+		"selectTime": "12:00 PM",
+		"location": "Location 1",
+		"category": "cathegory1",
+		"picture": "picture1",
+		"priority": 1
+	},
+	{
+		"id": 2,
+		"title": "Event 2",
+		"description": "Description for Event 2",
+		"select": "Option 2",
+		"date": "2023-08-04T14:00:00.000Z",
+		"selectTime": "2:00 PM",
+		"location": "Location 2",
+		"category": "cathegory2",
+		"picture": "picture2",
+		"priority": 2
+	},
+	{
+		"id": 3,
+		"title": "Event 3",
+		"description": "Description for Event 3",
+		"select": "Option 3",
+		"date": "2023-08-05T19:00:00.000Z",
+		"selectTime": "7:00 PM",
+		"location": "Location 3",
+		"category": "cathegory3",
+		"picture": "picture3",
+		"priority": 3
+	}
+]
