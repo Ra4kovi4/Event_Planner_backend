@@ -27,7 +27,7 @@ const eventsSchema = new Schema(
 			required: true,
 		},
 		selectDate: {
-			type: Date,
+			type: String,
 			required: true,
 		},
 		selectTime: {
@@ -61,7 +61,7 @@ const Events = model("Events", eventsSchema);
 const eventSchema = Joi.object({
 	title: Joi.string().required(),
 	description: Joi.string().required(),
-	selectDate: Joi.date().required(),
+	selectDate: Joi.string().required(),
 	selectTime: Joi.string().required(),
 	location: Joi.string().required(),
 	category: Joi.string()
