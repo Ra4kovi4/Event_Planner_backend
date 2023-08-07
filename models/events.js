@@ -23,7 +23,7 @@ const eventsSchema = new Schema(
 		description: {
 			type: String,
 			minlength: 2,
-			maxlength: 50,
+
 			required: true,
 		},
 		selectDate: {
