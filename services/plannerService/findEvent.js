@@ -8,7 +8,7 @@ const findEvents = async (data) => {
 		{ title: { $regex: title, $options: "i" } },
 		"-createdAt -updatedAt",
 		{ skip, limit }
-	);
+	).$wheresort({ createdAt: -1 });
 	return events;
 };
 module.exports = { findEvents };
