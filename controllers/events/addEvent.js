@@ -11,7 +11,12 @@ const addEvent = async (req, res) => {
 		picture,
 		priority,
 	} = req.body;
-
+	let newPicture = null;
+	if (!picture) {
+		newPicture = "https://i.ibb.co/J5XxVtJ/default.jpg";
+	} else {
+		newPicture = picture;
+	}
 	let event = await EventsService.createEvent(
 		title,
 		description,
@@ -19,7 +24,7 @@ const addEvent = async (req, res) => {
 		selectTime,
 		location,
 		category,
-		picture,
+		newPicture,
 		priority
 	);
 
