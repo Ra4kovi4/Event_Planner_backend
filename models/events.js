@@ -75,7 +75,7 @@ const eventSchema = Joi.object({
 			"Sport"
 		)
 		.required(),
-	picture: Joi.string(),
+	picture: Joi.string().allow(""),
 	priority: Joi.string().valid("High", "Medium", "Low").required(),
 });
 
