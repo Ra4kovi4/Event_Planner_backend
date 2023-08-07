@@ -3,13 +3,13 @@ const { Schema, model } = require("mongoose");
 const { handleMongooseError } = require("../helpers");
 
 const CATEGORIES = [
-	"art",
-	"business",
-	"music",
-	"conference",
-	"workshop",
-	"party",
-	"sport",
+	"Art",
+	"Business",
+	"Music",
+	"Conference",
+	"Workshop",
+	"Party",
+	"Sport",
 ];
 
 const eventsSchema = new Schema(
@@ -66,17 +66,17 @@ const eventSchema = Joi.object({
 	location: Joi.string().required(),
 	category: Joi.string()
 		.valid(
-			"art",
-			"business",
-			"music",
-			"conference",
-			"workshop",
-			"party",
-			"sport"
+			"Art",
+			"Business",
+			"Music",
+			"Conference",
+			"Workshop",
+			"Party",
+			"Sport"
 		)
 		.required(),
 	picture: Joi.string(),
-	priority: Joi.string().valid("high", "medium", "low").required(),
+	priority: Joi.string().valid("High", "Medium", "Low").required(),
 });
 
 module.exports = {
