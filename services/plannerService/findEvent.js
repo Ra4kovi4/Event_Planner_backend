@@ -6,9 +6,8 @@ const findEvents = async (data) => {
 
 	const events = await Events.find(
 		{ title: { $regex: title, $options: "i" } },
-		"-createdAt -updatedAt",
 		{ skip, limit }
-	).sort({ createdAt: -1 });
+	);
 	return events;
 };
 module.exports = { findEvents };

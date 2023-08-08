@@ -7,7 +7,7 @@ const getAllEvents = async (data) => {
 	const events = await Events.find({}, "-createdAt -updatedAt", {
 		skip,
 		limit,
-	});
+	}).sort({ createdAt: -1 });
 
 	return events;
 };
