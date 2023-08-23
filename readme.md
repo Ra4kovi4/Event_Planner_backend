@@ -6,7 +6,7 @@ After installing Node.js, clone this repository to your local machine:
 (https://github.com/Ra4kovi4/event_planner_backend.git).
 Navigate to the project directory:
 
-cd app-delivery-backend
+cd app-event-planner-backend
 Install the project dependencies:
 
 npm install
@@ -16,6 +16,7 @@ The application uses two environment variables: DB_HOST and PORT. These can be s
 Below is an example .env file:
 
 DB_HOST=mongodb://localhost:27017/mydatabase
+
 PORT=3000
 
 Usage
@@ -28,7 +29,7 @@ For development mode, use:
 
 npm run dev
 Endpoints
-Deploy https://event-planner-backend-mgav.onrender.com
+Deploy https://damp-sierra-19444-ce61428c5941.herokuapp.com
 
 The following is a list of available endpoints:
 
