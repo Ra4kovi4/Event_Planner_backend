@@ -19,9 +19,7 @@ const findEventsByCategory = async (req, res) => {
 		status: "success",
 		code: 200,
 		total: eventsCount,
-		data: {
-			events,
-		},
+		data: events,
 	});
 };
 
