@@ -2,13 +2,13 @@ const { HttpError } = require("../../helpers");
 const EventsService = require("../../services");
 
 const findEventsByTitle = async (req, res) => {
-	const { page = 1, limit = 6, title = "" } = req.query;
+	const { page = 1, limit, title = "" } = req.query;
 	const data = {
 		page: parseInt(page),
 		limit: parseInt(limit),
 		title,
 	};
-	const result = await EventsService.findEvents(data);
+	const { events, eventsCount } = await EventsService.findEvents(data);
 
 	if (result === null) {
 		throw HttpError(404, "Not found");
@@ -17,8 +17,9 @@ const findEventsByTitle = async (req, res) => {
 	res.json({
 		status: "success",
 		code: 200,
+		total: eventsCount,
 		data: {
-			result,
+			events,
 		},
 	});
 };

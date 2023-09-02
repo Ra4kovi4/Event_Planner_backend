@@ -4,6 +4,7 @@ const { deleteEvent } = require("./deleteEvents");
 const { findEvents } = require("./findEvent");
 const { eventById } = require("./eventsById");
 const { updateEvent } = require("./updateEvent");
+const { eventsByCategory } = require("./eventsByCategory");
 module.exports = {
 	createEvent,
 	getAllEvents,
@@ -11,4 +12,5 @@ module.exports = {
 	findEvents,
 	eventById,
 	updateEvent,
+	eventsByCategory,
 };

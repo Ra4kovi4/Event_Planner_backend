@@ -7,7 +7,9 @@ const { events: controllers } = require("../controllers");
 router.post("/", validateBody(eventSchema), controllers.addEvent);
 router.get("/", controllers.getAllUserEvents);
 router.get("/search", controllers.findEventsByTitle);
+router.get("/filter", controllers.findEventsByCategory);
 router.get("/:id", controllers.getEventById);
+
 router.put("/:id", controllers.updateEvent);
 router.delete("/:id", controllers.deleteEvents);
 

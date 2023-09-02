@@ -8,6 +8,10 @@ const findEvents = async (data) => {
 		{ title: { $regex: title, $options: "i" } },
 		{ skip, limit }
 	);
-	return events;
+
+	const eventsCount = await Events.find({
+		title: { $regex: title, $options: "i" },
+	}).countDocuments();
+	return { events, eventsCount };
 };
 module.exports = { findEvents };

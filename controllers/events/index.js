@@ -5,6 +5,8 @@ const deleteEvents = require("./deleteEvents");
 const getEventById = require("./getEventsById");
 const findEventsByTitle = require("./findEventsByTitle");
 const updateEvent = require("./updateEvent");
+const findEventsByCategory = require("./findEventsByCategory");
+
 module.exports = {
 	addEvent: ctrlWrapper(addEvent),
 	getAllUserEvents: ctrlWrapper(getAllUserEvents),
@@ -12,4 +14,5 @@ module.exports = {
 	getEventById: ctrlWrapper(getEventById),
 	findEventsByTitle: ctrlWrapper(findEventsByTitle),
 	updateEvent: ctrlWrapper(updateEvent),
+	findEventsByCategory: ctrlWrapper(findEventsByCategory),
 };
