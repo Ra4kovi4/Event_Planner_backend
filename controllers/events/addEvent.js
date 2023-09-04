@@ -1,4 +1,5 @@
 const EventsService = require("../../services");
+const cloudinary = require("cloudinary").v2;
 
 const addEvent = async (req, res) => {
 	const {
@@ -8,15 +9,18 @@ const addEvent = async (req, res) => {
 		selectTime,
 		location,
 		category,
-		picture,
 		priority,
 	} = req.body;
+
 	let newPicture = null;
-	if (!picture) {
-		newPicture = "https://i.ibb.co/J5XxVtJ/default.jpg";
+
+	if (req.file) {
+		const preview = cloudinary.url(req.file.filename, {});
+		newPicture = preview;
 	} else {
-		newPicture = picture;
+		newPicture = "https://i.ibb.co/J5XxVtJ/default.jpg";
 	}
+
 	let event = await EventsService.createEvent(
 		title,
 		description,
@@ -31,8 +35,8 @@ const addEvent = async (req, res) => {
 	await event.save();
 
 	res.json({
-		code: 200,
-		status: "Success",
+		code: 201,
+		status: "Created",
 		data: event,
 	});
 };

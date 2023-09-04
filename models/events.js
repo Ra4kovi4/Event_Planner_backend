@@ -46,7 +46,6 @@ const eventsSchema = new Schema(
 		},
 		picture: {
 			type: String,
-			default: "https://i.ibb.co/J5XxVtJ/default.jpg",
 		},
 		priority: { type: String, enum: ["High", "Medium", "Low"], required: true },
 	},

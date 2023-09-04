@@ -1,16 +1,37 @@
 const express = require("express");
-const { validateBody, upload } = require("../middlewars");
+const { validateBody, cloudUpload } = require("../middlewars");
 const { eventSchema } = require("../models");
 const router = express.Router();
 const { events: controllers } = require("../controllers");
 
-router.post("/", validateBody(eventSchema), controllers.addEvent);
+const cloudOptions = {
+	fieldname: "picture",
+	destFolder: "events",
+	transformation: {
+		width: 700,
+		height: 700,
+		crop: "fill",
+		gravity: "auto",
+	},
+};
+
+router.post(
+	"/",
+	cloudUpload(cloudOptions),
+	validateBody(eventSchema),
+	controllers.addEvent
+);
 router.get("/", controllers.getAllUserEvents);
 router.get("/search", controllers.findEventsByTitle);
 router.get("/filter", controllers.findEventsByCategory);
 router.get("/:id", controllers.getEventById);
 
-router.put("/:id", controllers.updateEvent);
+router.put(
+	"/:id",
+	cloudUpload(cloudOptions),
+	validateBody(eventSchema),
+	controllers.updateEvent
+);
 router.delete("/:id", controllers.deleteEvents);
 
 module.exports = router;
