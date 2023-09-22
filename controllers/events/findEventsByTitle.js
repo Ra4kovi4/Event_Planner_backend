@@ -3,6 +3,7 @@ const EventsService = require("../../services");
 
 const findEventsByTitle = async (req, res) => {
 	const { page = 1, limit, title = "" } = req.query;
+
 	const data = {
 		page: parseInt(page),
 		limit: parseInt(limit),
@@ -10,7 +11,7 @@ const findEventsByTitle = async (req, res) => {
 	};
 	const { events, eventsCount } = await EventsService.findEvents(data);
 
-	if (result === null) {
+	if (events === null) {
 		throw HttpError(404, "Not found");
 	}
 

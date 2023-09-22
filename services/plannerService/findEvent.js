@@ -6,6 +6,7 @@ const findEvents = async (data) => {
 
 	const events = await Events.find(
 		{ title: { $regex: title, $options: "i" } },
+		null,
 		{ skip, limit }
 	);
 
