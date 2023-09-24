@@ -3,7 +3,7 @@ const addEvent = require("./addEvent");
 const getAllUserEvents = require("./getAllEvents");
 const deleteEvents = require("./deleteEvents");
 const getEventById = require("./getEventsById");
-const findEventsByTitle = require("./findEventsByTitle");
+const findEventsByKeyword = require("./findEventsByKeyword");
 const updateEvent = require("./updateEvent");
 const findEventsByCategory = require("./findEventsByCategory");
 
@@ -12,7 +12,7 @@ module.exports = {
 	getAllUserEvents: ctrlWrapper(getAllUserEvents),
 	deleteEvents: ctrlWrapper(deleteEvents),
 	getEventById: ctrlWrapper(getEventById),
-	findEventsByTitle: ctrlWrapper(findEventsByTitle),
+	findEventsByKeyword: ctrlWrapper(findEventsByKeyword),
 	updateEvent: ctrlWrapper(updateEvent),
 	findEventsByCategory: ctrlWrapper(findEventsByCategory),
 };

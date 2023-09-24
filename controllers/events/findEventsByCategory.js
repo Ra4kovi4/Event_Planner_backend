@@ -2,7 +2,7 @@ const { HttpError } = require("../../helpers");
 const EventsService = require("../../services");
 
 const findEventsByCategory = async (req, res) => {
-	console.log(req.query);
+	
 	const { page = 1, limit = 8, category = "" } = req.query;
 	const data = {
 		page: parseInt(page),

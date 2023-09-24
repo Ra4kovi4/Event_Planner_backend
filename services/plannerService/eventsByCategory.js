@@ -10,7 +10,7 @@ const eventsByCategory = async (data) => {
 	const eventsCount = await Events.find({
 		category: category,
 	}).countDocuments();
-	console.log(eventsCount);
+
 
 	return { events, eventsCount };
 };

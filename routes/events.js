@@ -22,7 +22,7 @@ router.post(
 	controllers.addEvent
 );
 router.get("/", controllers.getAllUserEvents);
-router.get("/search", controllers.findEventsByTitle);
+router.get("/search", controllers.findEventsByKeyword);
 router.get("/filter", controllers.findEventsByCategory);
 router.get("/:id", controllers.getEventById);
 
