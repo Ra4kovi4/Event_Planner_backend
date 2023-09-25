@@ -1,6 +1,6 @@
-const { eventSchema, Events } = require("./events");
+const { eventSchema, Events } = require('./events');
 
 module.exports = {
-	eventSchema,
-	Events,
+    eventSchema,
+    Events,
 };

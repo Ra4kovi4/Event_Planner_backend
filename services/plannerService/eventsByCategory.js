@@ -1,17 +1,16 @@
-const { Events } = require("../../models");
+const { Events } = require('../../models');
 
-const eventsByCategory = async (data) => {
-	const { page, limit, category } = data;
+const eventsByCategory = async data => {
+    const { page, limit, category } = data;
 
-	const skip = (page - 1) * limit;
+    const skip = (page - 1) * limit;
 
-	const events = await Events.find({ category }).skip(skip).limit(limit);
+    const events = await Events.find({ category }).skip(skip).limit(limit);
 
-	const eventsCount = await Events.find({
-		category: category,
-	}).countDocuments();
+    const eventsCount = await Events.find({
+        category: category,
+    }).countDocuments();
 
-
-	return { events, eventsCount };
+    return { events, eventsCount };
 };
 module.exports = { eventsByCategory };

@@ -1,14 +1,14 @@
-const EventsService = require("../../services");
+const EventsService = require('../../services');
 
 const getAllUserEvents = async (req, res) => {
-	const { events, eventsCount } = await EventsService.getAllEvents(req.query);
+    const { events, eventsCount } = await EventsService.getAllEvents(req.query);
 
-	res.json({
-		code: 200,
-		status: "Success",
-		total: eventsCount,
-		data: events,
-	});
+    res.json({
+        code: 200,
+        status: 'Success',
+        total: eventsCount,
+        data: events,
+    });
 };
 
 module.exports = getAllUserEvents;

@@ -1,3 +1,3 @@
-const validateBody = require("./validateBody");
-const cloudUpload = require("./cloudUpload");
+const validateBody = require('./validateBody');
+const cloudUpload = require('./cloudUpload');
 module.exports = { validateBody, cloudUpload };

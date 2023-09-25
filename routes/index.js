@@ -1,5 +1,5 @@
-const eventsRouter = require("./events");
+const eventsRouter = require('./events');
 
 module.exports = {
-	eventsRouter,
+    eventsRouter,
 };
