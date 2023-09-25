@@ -9,9 +9,9 @@ const CATEGORIES = [
 	"Conference",
 	"Workshop",
 	"Party",
-	"Sport",
+	"Sport","Arte","Conferencia","Taller","Música","Negocios","Deporte"
 ];
-
+const PRIORITY=["High", "Medium", "Low",'Alta','Media','Baja']
 const eventsSchema = new Schema(
 	{
 		title: {
@@ -47,7 +47,7 @@ const eventsSchema = new Schema(
 		picture: {
 			type: String,
 		},
-		priority: { type: String, enum: ["High", "Medium", "Low"], required: true },
+		priority: { type: String, enum:PRIORITY, required: true },
 	},
 	{ versionKey: false, timestamps: true }
 );
@@ -63,17 +63,11 @@ const eventSchema = Joi.object({
 	location: Joi.string().required(),
 	category: Joi.string()
 		.valid(
-			"Art",
-			"Business",
-			"Music",
-			"Conference",
-			"Workshop",
-			"Party",
-			"Sport"
+			CATEGORIES
 		)
 		.required(),
 	picture: Joi.string().allow(""),
-	priority: Joi.string().valid("High", "Medium", "Low").required(),
+	priority: Joi.string().valid(PRIORITY).required(),
 });
 
 module.exports = {
