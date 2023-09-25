@@ -63,11 +63,17 @@ const eventSchema = Joi.object({
 	location: Joi.string().required(),
 	category: Joi.string()
 		.valid(
-			CATEGORIES
+			"Art",
+			"Business",
+			"Music",
+			"Conference",
+			"Workshop",
+			"Party",
+			"Sport"
 		)
 		.required(),
 	picture: Joi.string().allow(""),
-	priority: Joi.string().valid(PRIORITY).required(),
+	priority: Joi.string().valid("High", "Medium", "Low").required(),
 });
 
 module.exports = {
